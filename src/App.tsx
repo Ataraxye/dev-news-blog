@@ -1,34 +1,68 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import Alert from "./components/Alert";
+import Article from "./components/Article";
+import Body from "./components/Body";
+import Button from "./components/Button";
+let items = ["Paris", "Toulouse", "Vicdessos", "Calenzana"];
+
+let mainArticles: Article[] = [
+  {
+    title: "Article 1",
+    preview: "This is a preview",
+    image: "random_code.jpg",
+  },
+  {
+    title: "Article 2",
+    preview: "This is a preview",
+    image: "random_code_2.jpg",
+  },
+  {
+    title: "Article 3",
+    preview: "This is a preview",
+    image: "random_code.jpg",
+  },
+  {
+    title: "Article 4",
+    preview: "This is a preview",
+    image: "random_code.jpg",
+  },
+];
+
+let sideArticles: Article[] = [
+  {
+    title: "Side Article 1",
+    preview: "This is a preview",
+    image: "random_code.jpg",
+  },
+  {
+    title: "Side Article 2",
+    preview: "This is a preview",
+    image: "random_code_2.jpg",
+  },
+  {
+    title: "Side Article 3",
+    preview: "This is a preview",
+    image: "random_code_2.jpg",
+  },
+  {
+    title: "Side Article 4",
+    preview: "This is a preview",
+    image: "random_code.jpg",
+  },
+];
 
 function App() {
-  const [count, setCount] = useState(0)
+  const handleSelectItem = (item: string) => {
+    console.log(item);
+  };
+  const handleButtonClick = () => {
+    console.log("Button Clicked");
+  };
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <div className="container center-sm">
+      <Body mainArticles={mainArticles} sideArticles={sideArticles} />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
