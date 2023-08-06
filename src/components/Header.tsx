@@ -1,3 +1,5 @@
+import "../App.css";
+
 const Header = () => {
   return (
     <div
@@ -5,7 +7,15 @@ const Header = () => {
       style={{ backgroundColor: "blueviolet", height: "5em" }}
     >
       <div className="container-xxl text-center">
-        <h1 style={{ color: "white" }}>Le Procrastinateur</h1>
+        <h1
+          style={{
+            color: "white",
+            fontFamily: "DreamOrphans",
+            fontSize: "4em",
+          }}
+        >
+          Le Procrastinateur
+        </h1>
       </div>
     </div>
   );

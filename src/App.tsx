@@ -1,10 +1,7 @@
-import Alert from "./components/Alert";
 import Article from "./components/Article";
 import Body from "./components/Body";
-import Button from "./components/Button";
 import Header from "./components/Header";
-
-let items = ["Paris", "Toulouse", "Vicdessos", "Calenzana"];
+import "./App.css";
 
 let mainArticles: Article[] = [
   {
