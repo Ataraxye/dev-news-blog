@@ -5,7 +5,7 @@ const ArticleThumbnail = ({ title, preview, image }: Article) => {
   console.log(imgSrc);
 
   return (
-    <div className="col-md-4 col-sm-6">
+    <div className="col-lg-4 col-md-6 center mb-4">
       <div className="card h-100">
         <img
           src={imgSrc}

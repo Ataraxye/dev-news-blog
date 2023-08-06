@@ -2,9 +2,31 @@ import Alert from "./components/Alert";
 import Article from "./components/Article";
 import Body from "./components/Body";
 import Button from "./components/Button";
+import Header from "./components/Header";
+
 let items = ["Paris", "Toulouse", "Vicdessos", "Calenzana"];
 
 let mainArticles: Article[] = [
+  {
+    title: "Article 1",
+    preview: "This is a preview",
+    image: "random_code.jpg",
+  },
+  {
+    title: "Article 2",
+    preview: "This is a preview",
+    image: "random_code_2.jpg",
+  },
+  {
+    title: "Article 3",
+    preview: "This is a preview",
+    image: "random_code.jpg",
+  },
+  {
+    title: "Article 4",
+    preview: "This is a preview",
+    image: "random_code.jpg",
+  },
   {
     title: "Article 1",
     preview: "This is a preview",
@@ -59,9 +81,12 @@ function App() {
   };
 
   return (
-    <div className="container center-sm">
-      <Body mainArticles={mainArticles} sideArticles={sideArticles} />
-    </div>
+    <>
+      <Header />
+      <div className="container-lg center">
+        <Body mainArticles={mainArticles} sideArticles={sideArticles} />
+      </div>
+    </>
   );
 }
 

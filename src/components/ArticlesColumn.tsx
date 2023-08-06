@@ -7,7 +7,7 @@ interface ArticlesColumnProps {
 
 const ArticlesColumn = ({ articles }: ArticlesColumnProps) => {
   return (
-    <div className="col-md-4">
+    <div className="col g-4">
       {articles.map((article, index) => (
         <SideArticleThumbnail article={article} />
       ))}
