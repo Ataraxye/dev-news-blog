@@ -1,75 +1,11 @@
+import React, { useEffect, useState } from "react";
 import Article from "./components/Article";
 import Body from "./components/Body";
 import Header from "./components/Header";
-import "./App.css";
-
-let mainArticles: Article[] = [
-  {
-    title: "Article 1",
-    preview: "This is a preview",
-    image: "random_code.jpg",
-  },
-  {
-    title: "Article 2",
-    preview: "This is a preview",
-    image: "random_code_2.jpg",
-  },
-  {
-    title: "Article 3",
-    preview: "This is a preview",
-    image: "random_code.jpg",
-  },
-  {
-    title: "Article 4",
-    preview: "This is a preview",
-    image: "random_code.jpg",
-  },
-  {
-    title: "Article 1",
-    preview: "This is a preview",
-    image: "random_code.jpg",
-  },
-  {
-    title: "Article 2",
-    preview: "This is a preview",
-    image: "random_code_2.jpg",
-  },
-  {
-    title: "Article 3",
-    preview: "This is a preview",
-    image: "random_code.jpg",
-  },
-  {
-    title: "Article 4",
-    preview: "This is a preview",
-    image: "random_code.jpg",
-  },
-];
-
-let sideArticles: Article[] = [
-  {
-    title: "Side Article 1",
-    preview: "This is a preview",
-    image: "random_code.jpg",
-  },
-  {
-    title: "Side Article 2",
-    preview: "This is a preview",
-    image: "random_code_2.jpg",
-  },
-  {
-    title: "Side Article 3",
-    preview: "This is a preview",
-    image: "random_code_2.jpg",
-  },
-  {
-    title: "Side Article 4",
-    preview: "This is a preview",
-    image: "random_code.jpg",
-  },
-];
+import { parseTextFile } from "./scripts/parser";
 
 function App() {
+  const [articles, setArticles] = useState<Article[]>([]);
   const handleSelectItem = (item: string) => {
     console.log(item);
   };
@@ -77,11 +13,25 @@ function App() {
     console.log("Button Clicked");
   };
 
+  useEffect(() => {
+    // Simulate fetching the file using an HTTP request
+    fetch("../articles.txt")
+      .then((response) => response.text())
+      .then((text) => {
+        const parsedArticles = parseTextFile(text);
+        setArticles(parsedArticles);
+      })
+      .catch((error) => {
+        console.error("Error fetching or parsing the file:", error);
+      });
+  }, []);
+
+  console.log(articles);
   return (
     <>
       <Header />
       <div className="container-lg center">
-        <Body mainArticles={mainArticles} sideArticles={sideArticles} />
+        <Body mainArticles={articles} sideArticles={articles} />
       </div>
     </>
   );

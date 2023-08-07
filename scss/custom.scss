@@ -1,0 +1,10 @@
+// Custom.scss
+// Option B: Include parts of Bootstrap
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+
+
+$card-border-radius: 0px;
+$card-border-width: 0px;
+
+@import "../node_modules/bootstrap/scss/bootstrap";

@@ -11,7 +11,7 @@ interface BodyProps {
 
 const Body = ({ mainArticles, sideArticles }: BodyProps) => {
   return (
-    <div className="row">
+    <div className="row d-flex">
       <MainBody articles={mainArticles} title="Actualités" />
       <ArticlesColumn articles={sideArticles} />
       <Footer />
