@@ -1,0 +1,87 @@
+{
+    "articles": [
+        {
+            "title":"TÉMOIGNAGE : \"J'ai dû utiliser Internet Explorer pour tester mon site web\"",
+            "type": "Article",
+            "tags": ["Web"],
+            "preview": "Corentin, enfin sorti de l'hôpital, raconte son calvaire dans ce témoignage bouleversant.",
+            "image": "despaired_woman.jpg"
+        },
+        {
+            "title":"Cet étudiant est choqué que son ami continue à commiter sur leur projet de groupe sans permission",
+            "type": "Article",
+            "tags": ["Éducation"],
+            "preview": "\"C'était pourtant assez évident que j'avais prévu de tout faire de mon côté sans jamais communiquer,\" a déclaré le jeune homme.",
+            "image": "gitlab.jpg"
+        },
+        {
+            "title":"Nouvelle étude : la durée des pauses café serait liée à l'augmentation du temps de compilation",
+            "type": "Article",
+            "tags": ["Science"],
+            "preview": "Une étude complémentaire sur la baisse de popularité des options d'optimisation à l'approche des vacances est en cours.",
+            "image": "coffee_man.jpg"
+        },
+        {
+            "title": "QUIZ: Êtes-vous débordé par le travail ou avez-vous juste besoin d'une tasse de café supplémentaire ?",
+            "type": "Quiz",
+            "tags": ["Productivité"],
+            "preview": "Contenu sponsorisé par votre N+2."
+        },
+        {
+            "title":"Le mystère des MOOCs : pourquoi s'y prendre à l'avance quand on peut juste trainer sur Reddit toute la journée ?",
+            "type": "Article",
+            "tags": ["Science", "Éducation"],
+            "preview": "77% des étudiants considèrent encore \"avoir le temps de s'y mettre\" 15 minutes avant leur soutenance de MOOC.",
+            "image": "student_on_pc.jpg"
+        },
+        {
+            "title":"5 scripts que vous pouvez mettre en place en moins d'une semaine pour économiser jusqu'à cinq minutes par jour",
+            "type": "Article",
+            "tags": ["Productivité"],
+            "preview": "",
+            "image": "random_code.jpg"
+        },
+        {
+            "title":"Comment démontrer votre expertise en informatique en portant une chemise avec des pingouins dessus",
+            "type": "Article",
+            "tags": ["Entreprise"],
+            "preview": "",
+            "image": "shirts.jpg"
+        },
+        {
+            "title":"Incroyable ! Ce développeur a accepté un poste dans une start-up parce qu'il n'a trouvé aucune autre offre",
+            "type": "Article",
+            "tags": ["Entreprise"],
+            "preview": ""
+        },
+        {
+            "title":"Comment gagner une dispute technique en utilisant des arguments fallacieux et beaucoup de jargon",
+            "type": "Article",
+            "tags": ["Productivité"],
+            "preview": "Du même auteur : \"Comment monter sa start-up tout seul quand plus personne ne veut bosser avec vous\".",
+            "image": "random_code_2.jpg"
+        },
+        {
+            "title":"Étude : Les programmeurs les plus heureux sont ceux qui n'ont pas besoin de tester leur code",
+            "type": "Article",
+            "tags": ["Science"],
+            "preview": "Aucune corrélation n'a pu être établie entre la parution de cette étude et l'augmentation des suicides au sein de l'équipe QA.",
+            "image": "despaired_woman.jpg"
+        },
+        {
+            "title":"QUIZ : Êtes-vous un génie de l'informatique ou avez-vous simplement réussi à redémarrer votre ordinateur ?",
+            "type": "Quiz",
+            "tags": ["Productivité"],
+            "preview": ""
+        },
+        {
+            "title":"Développeuse déçue par son nouveau clavier mécanique qui n'améliore pas ses compétences en programmation",
+            "type": "Article",
+            "tags": ["Formation"],
+            "image": "keyboard.jpg",
+            "preview": ""
+        }
+
+    ]
+
+}

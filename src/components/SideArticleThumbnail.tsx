@@ -1,4 +1,4 @@
-import Article from "./Article";
+import { Article, ArticleType } from "./Article";
 
 interface SideArticleThumbnail {
   article: Article;
@@ -6,7 +6,7 @@ interface SideArticleThumbnail {
 
 const SideArticleThumbnail = ({ article }: SideArticleThumbnail) => {
   const imgSrc =
-    article.image === ""
+    article.image === undefined
       ? "../../articles-images/random_code.jpg"
       : "../../articles-images/" + article.image;
   return (
@@ -20,7 +20,9 @@ const SideArticleThumbnail = ({ article }: SideArticleThumbnail) => {
           />
         </div>
         <div className="col-8">
-          <p className="tag">Tag / 7 Août</p>
+          <p className="tag">
+            {article.tags.length > 0 ? article.tags[0] : "Article"} / 7 Août
+          </p>
           <h5 style={{ fontSize: "1.1em" }}>{article.title}</h5>
         </div>
       </div>

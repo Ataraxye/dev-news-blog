@@ -1,5 +1,5 @@
 import ArticleThumbnail from "./ArticleThumbnail";
-import Article from "./Article";
+import { Article, ArticleType } from "./Article";
 
 interface ArticlesGridProps {
   articles: Article[];
@@ -11,6 +11,8 @@ const ArticlesGrid = ({ articles }: ArticlesGridProps) => {
       {articles.map((article, index) => (
         <ArticleThumbnail
           title={article.title}
+          type={article.type}
+          tags={article.tags}
           preview={article.preview}
           image={article.image}
         />

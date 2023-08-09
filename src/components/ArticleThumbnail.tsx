@@ -1,9 +1,10 @@
-import Article from "./Article";
+import { Article, ArticleType } from "./Article";
 import "../App.css";
 
-const ArticleThumbnail = ({ title, preview, image }: Article) => {
+const ArticleThumbnail = ({ title, tags, preview, image }: Article) => {
+  console.log(image);
   const imgSrc =
-    image === ""
+    image === undefined
       ? "../../articles-images/random_code.jpg"
       : "../../articles-images/" + image;
 
@@ -17,7 +18,7 @@ const ArticleThumbnail = ({ title, preview, image }: Article) => {
           style={{ objectFit: "cover", height: "200px" }}
         />
         <div className="card-body">
-          <p className="tag">Tag / 7 Août</p>
+          <p className="tag">{tags.length > 0 ? tags[0] : "Tag"} / 7 Août</p>
           <h5 className="card-title" style={{ fontSize: "1.1em" }}>
             {title}
           </h5>

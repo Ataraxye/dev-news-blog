@@ -1,4 +1,4 @@
-import Article from "./Article";
+import { Article, ArticleType } from "./Article";
 import ArticlesGrid from "./ArticlesGrid";
 
 interface MainBodyProps {
