@@ -12,10 +12,12 @@ interface BodyProps {
 
 const Body = ({ mainArticles, sideArticles, quizzes }: BodyProps) => {
   return (
-    <div className="row d-flex">
-      <MainBody articles={mainArticles} title="Actualités" />
-      <ArticlesColumn articles={sideArticles} quizzes={quizzes} />
-      <Footer />
+    <div className="container">
+      <div className="row d-flex">
+        <MainBody articles={mainArticles} title="Actualités" />
+        <ArticlesColumn articles={sideArticles} quizzes={quizzes} />
+        <Footer />
+      </div>
     </div>
   );
 };
