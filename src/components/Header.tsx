@@ -1,5 +1,9 @@
 import "../App.css";
 import "../css/style.css";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
 
 interface HeaderProps {
   tags: string[];
@@ -22,28 +26,24 @@ const Header = ({ tags, onSelectTag }: HeaderProps) => {
           Le Procrastinateur
         </h1>
       </div>
-      <nav
-        className="navbar navbar-expand-lg shadow"
-        style={{ backgroundColor: "white" }}
-      >
-        <div className="container g-0">
-          <div className="collapse navbar-collapse" id="navbarText">
-            <ul className="navbar-nav mb-2 mb-lg-0 justify-content-center">
+      <Navbar bg="light" data-bs-type="light" expand="lg" className="shadow-sm">
+        <Container>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto">
               {tags.map((tag) => (
-                <li className="nav-item">
-                  <a
-                    className="nav-link"
-                    href="#"
-                    onClick={() => onSelectTag(tag)}
-                  >
-                    {tag}
-                  </a>
-                </li>
+                <Nav.Link
+                  href={"#" + tag}
+                  key={tag}
+                  onClick={() => onSelectTag(tag)}
+                >
+                  {tag}
+                </Nav.Link>
               ))}
-            </ul>
-          </div>
-        </div>
-      </nav>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
     </div>
   );
 };
