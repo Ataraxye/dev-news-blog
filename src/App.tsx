@@ -8,6 +8,7 @@ import { Shuffle } from "./scripts/utils";
 function App() {
   const [articles, setArticles] = useState<Article[]>([]);
   const [mainArticles, setMainArticles] = useState<Article[]>([]);
+  const [mainArticlesTitle, setMainArticlesTitle] = useState<string>("");
 
   let handleTagSelection = (tag: string) => {
     setMainArticles(
@@ -18,6 +19,7 @@ function App() {
           article.tags.includes(tag)
       )
     );
+    setMainArticlesTitle(tag);
   };
 
   useEffect(() => {
@@ -53,6 +55,7 @@ function App() {
       <div className="container-lg center">
         <Body
           mainArticles={mainArticles}
+          mainArticlesTitle={mainArticlesTitle}
           sideArticles={sideArtices}
           quizzes={quizzes}
         />

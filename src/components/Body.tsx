@@ -6,15 +6,24 @@ import MainBody from "./MainBody";
 
 interface BodyProps {
   mainArticles: Article[];
+  mainArticlesTitle: string;
   sideArticles: Article[];
   quizzes: Article[];
 }
 
-const Body = ({ mainArticles, sideArticles, quizzes }: BodyProps) => {
+const Body = ({
+  mainArticles,
+  mainArticlesTitle,
+  sideArticles,
+  quizzes,
+}: BodyProps) => {
   return (
     <div className="container">
       <div className="row d-flex">
-        <MainBody articles={mainArticles} title="Actualités" />
+        <MainBody
+          articles={mainArticles}
+          title={mainArticlesTitle != "" ? mainArticlesTitle : "Actualités"}
+        />
         <ArticlesColumn articles={sideArticles} quizzes={quizzes} />
         <Footer />
       </div>
