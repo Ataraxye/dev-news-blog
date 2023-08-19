@@ -1,6 +1,12 @@
 import "../App.css";
+import "../css/style.css";
 
-const Header = () => {
+interface HeaderProps {
+  tags: string[];
+  onSelectTag: (tag: string) => void;
+}
+
+const Header = ({ tags, onSelectTag }: HeaderProps) => {
   return (
     <div className="col container-fluid g-0 sticky-top align-items-center ">
       <div className="container-fluid g-0 text-center">
@@ -22,22 +28,18 @@ const Header = () => {
       >
         <div className="container g-0">
           <div className="collapse navbar-collapse" id="navbarText">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
-                  Home
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Features
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Pricing
-                </a>
-              </li>
+            <ul className="navbar-nav mb-2 mb-lg-0 justify-content-center">
+              {tags.map((tag) => (
+                <li className="nav-item">
+                  <a
+                    className="nav-link"
+                    href="#"
+                    onClick={() => onSelectTag(tag)}
+                  >
+                    {tag}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
         </div>

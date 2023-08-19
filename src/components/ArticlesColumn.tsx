@@ -8,7 +8,6 @@ interface ArticlesColumnProps {
 }
 
 const ArticlesColumn = ({ articles, quizzes }: ArticlesColumnProps) => {
-  console.log(quizzes[0]);
   return (
     <div className="col-lg-4 col-md-6 col-12 g-4 gx-5">
       <div className="mb-4">

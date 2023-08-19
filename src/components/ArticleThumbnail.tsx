@@ -2,7 +2,6 @@ import { Article, ArticleType } from "./Article";
 import "../App.css";
 
 const ArticleThumbnail = ({ title, tags, preview, image }: Article) => {
-  console.log(image);
   const imgSrc =
     image === undefined
       ? "../../articles-images/random_code.jpg"

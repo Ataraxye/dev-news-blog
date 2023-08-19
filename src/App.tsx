@@ -7,6 +7,18 @@ import { Shuffle } from "./scripts/utils";
 
 function App() {
   const [articles, setArticles] = useState<Article[]>([]);
+  const [mainArticles, setMainArticles] = useState<Article[]>([]);
+
+  let handleTagSelection = (tag: string) => {
+    setMainArticles(
+      articles.filter(
+        (article) =>
+          article.type == ArticleType.Article &&
+          article.preview !== "" &&
+          article.tags.includes(tag)
+      )
+    );
+  };
 
   useEffect(() => {
     // Simulate fetching the file using an HTTP request
@@ -15,23 +27,29 @@ function App() {
       .then((text) => {
         const parsedArticles = JSON.parse(text);
         setArticles(parsedArticles.articles);
+        setMainArticles(
+          parsedArticles.articles.filter(
+            (article: Article) =>
+              article.type === ArticleType.Article && article.preview !== ""
+          )
+        );
       })
       .catch((error) => {
         console.error("Error fetching or parsing the file:", error);
       });
   }, []);
 
-  let mainArticles = articles.filter(
-    (article) => article.type === ArticleType.Article && article.preview !== ""
-  );
   let sideArtices = articles.filter(
     (article) => article.type === ArticleType.Article && article.preview === ""
   );
   let quizzes = articles.filter((article) => article.type === ArticleType.Quiz);
 
+  let tags = new Set<string>();
+  articles.forEach((article) => article.tags.forEach((tag) => tags.add(tag)));
+
   return (
     <>
-      <Header />
+      <Header tags={Array.from(tags)} onSelectTag={handleTagSelection} />
       <div className="container-lg center">
         <Body
           mainArticles={mainArticles}

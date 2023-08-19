@@ -19,3 +19,8 @@ p {
     font-family: 'RobotoSlab';
     font-weight: 300;
 }
+
+.navbar a {
+    font-family: 'RobotoSlab';
+    font-weight: 550;
+}
