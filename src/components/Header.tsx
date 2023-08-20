@@ -3,14 +3,29 @@ import "../css/style.css";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
+import { LinkContainer } from "react-router-bootstrap";
+import { useState, useEffect } from "react";
+import { Article, ArticlesContainer } from "./Article";
+import { typedFetch } from "../scripts/utils";
 
 interface HeaderProps {
   tags: string[];
   onSelectTag: (tag: string) => void;
 }
 
-const Header = ({ tags, onSelectTag }: HeaderProps) => {
+const Header = () => {
+  const [categories, setCategories] = useState<string[]>([""]);
+
+  useEffect(() => {
+    typedFetch<ArticlesContainer>("/api/").then((data) => {
+      const uniqueCategories = new Set();
+      data.articles.forEach((item) => {
+        item.tags.forEach((tag) => uniqueCategories.add(tag));
+      });
+      setCategories([...uniqueCategories] as string[]);
+    });
+  }, []);
+
   return (
     <div className="col container-fluid g-0 sticky-top align-items-center ">
       <div className="container-fluid g-0 text-center">
@@ -22,11 +37,10 @@ const Header = ({ tags, onSelectTag }: HeaderProps) => {
             fontFamily: "DreamOrphans",
             fontSize: "4em",
           }}
-          onClick={() => onSelectTag("")}
         >
-          <Nav.Link href="#Actualités" style={{}}>
-            Le Procrastinateur
-          </Nav.Link>
+          <LinkContainer to={"/"}>
+            <Nav.Link>Le Procrastinateur</Nav.Link>
+          </LinkContainer>
         </h1>
       </div>
       <Navbar bg="light" data-bs-type="light" expand="lg" className="shadow-sm">
@@ -34,14 +48,10 @@ const Header = ({ tags, onSelectTag }: HeaderProps) => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              {tags.map((tag) => (
-                <Nav.Link
-                  href={"#" + tag}
-                  key={tag}
-                  onClick={() => onSelectTag(tag)}
-                >
-                  {tag}
-                </Nav.Link>
+              {categories.map((tag) => (
+                <LinkContainer key={tag} to={`/category/${tag}`}>
+                  <Nav.Link>{tag}</Nav.Link>
+                </LinkContainer>
               ))}
             </Nav>
           </Navbar.Collapse>

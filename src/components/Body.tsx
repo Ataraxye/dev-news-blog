@@ -2,32 +2,24 @@ import { Article, ArticleType } from "./Article";
 import ArticlesGrid from "./ArticlesGrid";
 import ArticlesColumn from "./ArticlesColumn";
 import Footer from "./Footer";
-import MainBody from "./MainBody";
+import MainBody from "./HomeBody";
+import Header from "./Header";
+import { Outlet } from "react-router-dom";
 
-interface BodyProps {
-  mainArticles: Article[];
-  mainArticlesTitle: string;
-  sideArticles: Article[];
-  quizzes: Article[];
-}
-
-const Body = ({
-  mainArticles,
-  mainArticlesTitle,
-  sideArticles,
-  quizzes,
-}: BodyProps) => {
+const Body = () => {
   return (
-    <div className="container">
-      <div className="row d-flex">
-        <MainBody
-          articles={mainArticles}
-          title={mainArticlesTitle != "" ? mainArticlesTitle : "Actualités"}
-        />
-        <ArticlesColumn articles={sideArticles} quizzes={quizzes} />
-        <Footer />
+    <>
+      <Header />
+      <div className="container-lg center">
+        <div className="container">
+          <div className="row d-flex">
+            <Outlet />
+            <ArticlesColumn />
+            <Footer />
+          </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
