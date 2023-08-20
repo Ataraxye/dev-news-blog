@@ -12,12 +12,17 @@ function App() {
 
   let handleTagSelection = (tag: string) => {
     setMainArticles(
-      articles.filter(
-        (article) =>
-          article.type == ArticleType.Article &&
-          article.preview !== "" &&
-          article.tags.includes(tag)
-      )
+      tag != ""
+        ? articles.filter(
+            (article) =>
+              article.type == ArticleType.Article &&
+              article.preview !== "" &&
+              article.tags.includes(tag)
+          )
+        : articles.filter(
+            (article) =>
+              article.type == ArticleType.Article && article.preview != ""
+          )
     );
     setMainArticlesTitle(tag);
   };

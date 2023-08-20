@@ -22,8 +22,11 @@ const Header = ({ tags, onSelectTag }: HeaderProps) => {
             fontFamily: "DreamOrphans",
             fontSize: "4em",
           }}
+          onClick={() => onSelectTag("")}
         >
-          Le Procrastinateur
+          <Nav.Link href="#Actualités" style={{}}>
+            Le Procrastinateur
+          </Nav.Link>
         </h1>
       </div>
       <Navbar bg="light" data-bs-type="light" expand="lg" className="shadow-sm">
