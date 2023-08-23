@@ -1,4 +1,4 @@
-import { Article, ArticleType, ArticlesContainer } from "./Article";
+import { Article, ArticleType, ArticlesContainer } from "../scripts/Article";
 import ArticlesGrid from "./ArticlesGrid";
 import { typedFetch } from "../scripts/utils";
 import { useState, useEffect } from "react";
@@ -12,7 +12,7 @@ const CategoryBody = () => {
     typedFetch<ArticlesContainer>(`/api/category/${params.category}`).then(
       (data) => setArticles(data.articles)
     );
-  }, []);
+  }, [params.category]);
 
   return (
     <div className="col-lg-8 col-md-6 g-4 gx-5">

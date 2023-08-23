@@ -5,7 +5,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { LinkContainer } from "react-router-bootstrap";
 import { useState, useEffect } from "react";
-import { Article, ArticlesContainer } from "./Article";
+import { Article, ArticlesContainer } from "../scripts/Article";
 import { typedFetch } from "../scripts/utils";
 
 interface HeaderProps {

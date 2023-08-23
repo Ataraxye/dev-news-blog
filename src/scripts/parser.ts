@@ -1,4 +1,4 @@
-import {Article, ArticleType} from "../components/Article";
+import { Article, ArticleType } from "./Article";
 
 /*export const parseTextFile = (text: string): Article[] => {
     const lines = text.split('\n');
@@ -100,5 +100,3 @@ import {Article, ArticleType} from "../components/Article";
   
     return articles;
   };*/
-  
-  

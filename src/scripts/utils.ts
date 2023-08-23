@@ -1,4 +1,4 @@
-import { Article } from "../components/Article";
+import { Article } from "./Article";
 
 export let Shuffle = (arr: Article[]) => {
   let randomizedArr = arr.slice(0);

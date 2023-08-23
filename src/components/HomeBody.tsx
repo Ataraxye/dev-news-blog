@@ -1,4 +1,4 @@
-import { Article, ArticleType, ArticlesContainer } from "./Article";
+import { Article, ArticleType, ArticlesContainer } from "../scripts/Article";
 import ArticlesGrid from "./ArticlesGrid";
 import { typedFetch } from "../scripts/utils";
 import { useState, useEffect } from "react";

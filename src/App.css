@@ -1,45 +1,58 @@
 @font-face {
-    font-family: 'DreamOrphans';
-    src: local('DreamOrphans'), url(./assets/dream_orphans/DreamOrphans.otf) format('opentype');
-    /* other formats include: 'woff2', 'truetype, 'opentype',
+  font-family: "DreamOrphans";
+  src: local("DreamOrphans"),
+    url(./assets/dream_orphans/DreamOrphans.otf) format("opentype");
+  /* other formats include: 'woff2', 'truetype, 'opentype',
                               'embedded-opentype', and 'svg' */
-  }
+}
 
-@font-face{
-    font-family: 'RobotoSlab';
-    src: local('RobotoSlab'), url(./assets/Roboto_Slab/RobotoSlab-VariableFont_wght.ttf) format('truetype');
+@font-face {
+  font-family: "RobotoSlab";
+  src: local("RobotoSlab"),
+    url(./assets/Roboto_Slab/RobotoSlab-VariableFont_wght.ttf)
+      format("truetype");
 }
 
 h5 {
-    font-family: 'RobotoSlab';
-    font-weight: 650;
+  font-family: "RobotoSlab";
+  font-weight: 650;
 }
 
 p {
-    font-family: 'RobotoSlab';
-    font-weight: 300;
+  font-family: "RobotoSlab";
+  font-weight: 300;
 }
 
 .tag {
-    font-family: 'RobotoSlab';
-    font-weight: 100;
-    color: #303030;
-    margin: 0 0 0 0;
-    font-size:smaller;
+  font-family: "RobotoSlab";
+  font-weight: 100;
+  color: #303030;
+  margin: 0 0 0 0;
+  font-size: smaller;
 }
 
 .quiz {
-    background-color: rgb(77, 31, 150);
-    color: white;
-    width: 200px;
-    height: 200px;
-    font-size: larger;
+  background-color: rgb(77, 31, 150);
+  color: white;
+  width: 200px;
+  height: 200px;
+  font-size: larger;
 }
 
 .quiz-button {
-    background-color: none;
-    border-radius: 0%;
-    border-width: 2px;
-    border-color: white;
-    color: white;
+  background-color: none;
+  border-radius: 0%;
+  border-width: 2px;
+  border-color: white;
+  color: white;
+}
+
+.router-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.router-link :hover {
+  color: #555555;
+  opacity: 0.8;
 }

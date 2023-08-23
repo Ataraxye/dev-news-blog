@@ -1,8 +1,5 @@
-import { Article, ArticleType } from "./Article";
-import ArticlesGrid from "./ArticlesGrid";
 import ArticlesColumn from "./ArticlesColumn";
 import Footer from "./Footer";
-import MainBody from "./HomeBody";
 import Header from "./Header";
 import { Outlet } from "react-router-dom";
 

@@ -1,5 +1,5 @@
 import ArticleThumbnail from "./ArticleThumbnail";
-import { Article, ArticleType } from "./Article";
+import { Article, ArticleType } from "../scripts/Article";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
@@ -16,11 +16,13 @@ const ArticlesGrid = ({ articles }: ArticleGridProps) => {
         articles.map((article, index) => (
           <ArticleThumbnail
             key={index}
+            id={article.id}
             title={article.title}
             type={article.type}
             tags={article.tags}
             preview={article.preview}
             image={article.image}
+            content={article.content}
           />
         ))
       ) : (

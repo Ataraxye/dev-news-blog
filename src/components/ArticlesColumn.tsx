@@ -1,4 +1,4 @@
-import { Article, ArticleType, ArticlesContainer } from "./Article";
+import { Article, ArticleType, ArticlesContainer } from "../scripts/Article";
 import QuizArticle from "./QuizArticle";
 import SideArticleThumbnail from "./SideArticleThumbnail";
 import { typedFetch } from "../scripts/utils";

@@ -1,7 +1,8 @@
-import { Article, ArticleType } from "./Article";
+import { Article, ArticleType } from "../scripts/Article";
 import "../App.css";
+import { Link } from "react-router-dom";
 
-const ArticleThumbnail = ({ title, tags, preview, image }: Article) => {
+const ArticleThumbnail = ({ id, title, tags, preview, image }: Article) => {
   const imgSrc =
     image === undefined
       ? "../../articles-images/random_code.jpg"
@@ -18,9 +19,11 @@ const ArticleThumbnail = ({ title, tags, preview, image }: Article) => {
         />
         <div className="card-body">
           <p className="tag">{tags.length > 0 ? tags[0] : "Tag"} / 7 Août</p>
-          <h5 className="card-title" style={{ fontSize: "1.1em" }}>
-            {title}
-          </h5>
+          <Link to={`/article/${id}`} className="router-link">
+            <h5 className="card-title" style={{ fontSize: "1.1em" }}>
+              {title}
+            </h5>
+          </Link>
           <p className="card-text">{preview}</p>
         </div>
       </div>

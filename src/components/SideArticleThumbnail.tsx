@@ -1,4 +1,4 @@
-import { Article, ArticleType } from "./Article";
+import { Article, ArticleType } from "../scripts/Article";
 
 interface SideArticleThumbnail {
   article: Article;
