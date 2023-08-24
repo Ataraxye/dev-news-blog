@@ -1,6 +1,7 @@
 import { Article, ArticleType } from "../scripts/Article";
 import "../App.css";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const ArticleThumbnail = ({ id, title, tags, preview, image }: Article) => {
   const imgSrc =

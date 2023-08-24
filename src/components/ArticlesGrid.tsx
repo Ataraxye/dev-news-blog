@@ -2,6 +2,7 @@ import ArticleThumbnail from "./ArticleThumbnail";
 import { Article, ArticleType } from "../scripts/Article";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import ThumbnailPlaceholder from "./placeholders/ThumbnailPlaceholder";
 
 interface ArticleGridProps {
   articles: Article[];
@@ -9,6 +10,7 @@ interface ArticleGridProps {
 
 const ArticlesGrid = ({ articles }: ArticleGridProps) => {
   const params = useParams();
+  let [isLoading, setIsLoading] = useState<boolean>(true);
 
   return (
     <div className="row row-cols-1 row-cols-md-1 row-cols-xl-3 gx-4">
@@ -26,10 +28,11 @@ const ArticlesGrid = ({ articles }: ArticleGridProps) => {
           />
         ))
       ) : (
-        <p>
-          On dirait qu'il n'y a pas encore d'articles dans cette catégorie !
-          Revenez plus tard !
-        </p>
+        <>
+          <ThumbnailPlaceholder />
+          <ThumbnailPlaceholder />
+          <ThumbnailPlaceholder />
+        </>
       )}
     </div>
   );
